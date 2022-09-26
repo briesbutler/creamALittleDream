@@ -6,7 +6,7 @@ var baseURL;
 if (window.location.origin === "http://localhost:3000") {
   baseURL = "http://127.0.0.1:8000"; // development address
 } else {
-  baseURL = "https://creamfeast-backend-production.herokuapp.com/"; // production address
+  baseURL = "https://creamaldream-backend.herokuapp.com/"; // production address
 }
 // if (
 //   process.env.REACT_APP_ENVIRONMENT &&
