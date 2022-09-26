@@ -38,7 +38,7 @@ CORS_ALLOWED_ORIGINS = ['http://localhost:3000',
 # Application definition
 
 INSTALLED_APPS = [
-    # 'corsheaders',
+    'corsheaders',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cloudinary',
-    # 'django_filters',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
