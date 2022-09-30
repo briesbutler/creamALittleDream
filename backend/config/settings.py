@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'dj_rest_auth.registration',
     'items',
+    "rest_framework_simplejwt"
 ]
 
 MIDDLEWARE = [
