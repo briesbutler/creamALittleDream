@@ -5,6 +5,12 @@ const initialState = {
     next: null,
     previous: null,
   },
+  user: {
+    username: "",
+    email: "",
+    token: "",
+    token_expires_at: "",
+  },
 };
 
 export default initialState;

@@ -52,6 +52,82 @@ export default class API {
       throw new Error(error);
     }
   };
+
+  signUp = async (username, email, password1, password2) => {
+    const savedPost = await api
+      .post("/dj-rest-auth/registration/", {
+        username: username,
+        email: email,
+        password1: password1,
+        password2: password2,
+      })
+      .then((response) => {
+        return response.data;
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+    return savedPost;
+  };
+  //   addPost = async (postBody) => {
+  //     const formData = new FormData();
+
+  //     for (const key in postBody) {
+  //       formData.append(key, postBody[key]);
+  //     }
+
+  //     try {
+  //       const response = await api.post("/posts/add/", formData);
+  //       return response.data;
+  //     } catch (error) {
+  //       throw new Error(error);
+  //     }
+  //   };
+  //////////////////from shoeden site
+  signIn = async (username, email, password) => {
+    const savedPost = await api
+      .post("/dj-rest-auth/login/", {
+        username: username,
+        email: email,
+        password: password,
+      })
+      .then((response) => {
+        return response.data;
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+    return savedPost;
+  };
+
+  ///////////////from dj site
+  // signIn = async ({params}) => {
+  //   params.preventDefault()
+  //   return fetch('/dj-rest-auth/login/', {
+  //     method: 'POST',
+  //     credentials: 'omit',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'Accept': 'application/json',
+  //     },
+  //     body:  JSON.stringify({username, password})
+  //   }).then(resp => resp.json()).then(data => {
+  //     changeResponse(data)
+  //   }).catch(error => console.log('error ->', error))
+  // }
+
+  getUsers = async () => {
+    const posts = await api
+      .get("/dj-rest-auth/user/")
+      .then((response) => {
+        return response.data;
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+    return posts;
+  };
+
   // addUser = async (user) => {
   //   const formData = new FormData();
 

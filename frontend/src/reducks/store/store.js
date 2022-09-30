@@ -8,9 +8,11 @@ import { logger } from "redux-logger";
 import thunk from "redux-thunk";
 
 import { ItemsReducer } from "../items/reducers";
+import { UserReducer } from "../users/reducers";
 
 const rootReducer = combineReducers({
   items: ItemsReducer,
+  users: UserReducer,
 });
 
 export default function configureStores(preloadedState) {
