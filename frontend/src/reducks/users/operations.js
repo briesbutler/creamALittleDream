@@ -41,16 +41,16 @@ export const signUp = (username, email, password1, password2) => {
   };
 };
 
-export const signIn = (username, email, password) => {
+export const signIn = (email, password) => {
   return async (dispatch) => {
     // Validation
-    if (username === "" || email === "" || password === "") {
+    if (email === "" || password === "") {
       alert("Please fill out username, email and password.");
       return false;
     }
 
     return api
-      .signIn(username, email, password)
+      .signIn(email, password)
       .then((user) => {
         dispatch(signInAction(user));
         localStorage.setItem(LOGIN_USER_KEY, JSON.stringify(user));

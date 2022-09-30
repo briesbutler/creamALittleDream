@@ -84,10 +84,9 @@ export default class API {
   //     }
   //   };
   //////////////////from shoeden site
-  signIn = async (username, email, password) => {
+  signIn = async (email, password) => {
     const savedPost = await api
       .post("/dj-rest-auth/login/", {
-        username: username,
         email: email,
         password: password,
       })

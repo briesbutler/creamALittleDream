@@ -66,13 +66,8 @@ const LoginForm = ({ isShowLogin, handleSignUpClick, handleLoginClick }) => {
 
   const dispatch = useDispatch();
 
-  const [username, setUserName] = useState(""),
-    [email, setEmail] = useState(""),
+  const [email, setEmail] = useState(""),
     [password, setPassword] = useState("");
-
-  const inputUserName = (event) => {
-    setUserName(event.target.value);
-  };
 
   const inputEmail = (event) => {
     setEmail(event.target.value);
@@ -83,8 +78,7 @@ const LoginForm = ({ isShowLogin, handleSignUpClick, handleLoginClick }) => {
   };
 
   const signInButton = () => {
-    dispatch(signIn(username, email, password));
-    setUserName("");
+    dispatch(signIn(email, password));
     setEmail("");
     setPassword("");
     handleLoginClick();
@@ -113,17 +107,6 @@ const LoginForm = ({ isShowLogin, handleSignUpClick, handleLoginClick }) => {
           </div>
           <div className="signin-content1">
             <h2 className="login-text">SIGN IN</h2>
-          </div>
-          <div className="signin-content2">
-            <input
-              onChange={inputUserName}
-              value={username}
-              type={"input"}
-              name={"username"}
-              placeholder="Username"
-              required
-              className="signup-box"
-            />
           </div>
           <div className="signin-content2">
             <input
